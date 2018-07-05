@@ -1,4 +1,4 @@
-// MARK: - Mocks generated from file: Leilao/Dao/LeilaoDao.swift at 2018-06-08 15:32:33 +0000
+// MARK: - Mocks generated from file: Leilao/Dao/LeilaoDao.swift at 2018-06-12 14:26:50 +0000
 
 //
 //  LeilaoDao.swift
@@ -196,7 +196,7 @@ class MockLeilaoDao: LeilaoDao, Cuckoo.ClassMock {
 }
 
 
-// MARK: - Mocks generated from file: Leilao/Models/Carteiro.swift at 2018-06-08 15:32:33 +0000
+// MARK: - Mocks generated from file: Leilao/Models/Carteiro.swift at 2018-06-12 14:26:50 +0000
 
 //
 //  Carteiro.swift
@@ -281,6 +281,97 @@ class MockCarteiro: Carteiro, Cuckoo.ClassMock {
 
     
      override func envia(_ leilao: Leilao)  {
+        return DefaultValueRegistry.defaultValue(for: Void.self)
+    }
+    
+}
+
+
+// MARK: - Mocks generated from file: Leilao/Models/RepositorioDePagamento.swift at 2018-06-12 14:26:50 +0000
+
+//
+//  RepositorioDePagamento.swift
+//  Leilao
+//
+//  Created by Alura Laranja on 08/06/18.
+//  Copyright © 2018 Alura. All rights reserved.
+//
+
+import Cuckoo
+@testable import Leilao
+
+import Foundation
+
+class MockRepositorioDePagamento: RepositorioDePagamento, Cuckoo.ClassMock {
+    typealias MocksType = RepositorioDePagamento
+    typealias Stubbing = __StubbingProxy_RepositorioDePagamento
+    typealias Verification = __VerificationProxy_RepositorioDePagamento
+    let cuckoo_manager = Cuckoo.MockManager(hasParent: true)
+
+    
+
+    
+
+    
+    // ["name": "salva", "returnSignature": "", "fullyQualifiedName": "salva(_: Pagamento)", "parameterSignature": "_ pagamento: Pagamento", "parameterSignatureWithoutNames": "pagamento: Pagamento", "inputTypes": "Pagamento", "isThrowing": false, "isInit": false, "isOverriding": true, "hasClosureParams": false, "@type": "ClassMethod", "accessibility": "", "parameterNames": "pagamento", "call": "pagamento", "parameters": [CuckooGeneratorFramework.MethodParameter(label: nil, name: "pagamento", type: "Pagamento", range: CountableRange(216..<237), nameRange: CountableRange(0..<0))], "returnType": "Void", "isOptional": false, "stubFunction": "Cuckoo.ClassStubNoReturnFunction"]
+     override func salva(_ pagamento: Pagamento)  {
+        
+            return cuckoo_manager.call("salva(_: Pagamento)",
+                parameters: (pagamento),
+                superclassCall:
+                    
+                    super.salva(pagamento)
+                    )
+        
+    }
+    
+
+	struct __StubbingProxy_RepositorioDePagamento: Cuckoo.StubbingProxy {
+	    private let cuckoo_manager: Cuckoo.MockManager
+	
+	    init(manager: Cuckoo.MockManager) {
+	        self.cuckoo_manager = manager
+	    }
+	    
+	    
+	    func salva<M1: Cuckoo.Matchable>(_ pagamento: M1) -> Cuckoo.ClassStubNoReturnFunction<(Pagamento)> where M1.MatchedType == Pagamento {
+	        let matchers: [Cuckoo.ParameterMatcher<(Pagamento)>] = [wrap(matchable: pagamento) { $0 }]
+	        return .init(stub: cuckoo_manager.createStub(for: MockRepositorioDePagamento.self, method: "salva(_: Pagamento)", parameterMatchers: matchers))
+	    }
+	    
+	}
+
+	struct __VerificationProxy_RepositorioDePagamento: Cuckoo.VerificationProxy {
+	    private let cuckoo_manager: Cuckoo.MockManager
+	    private let callMatcher: Cuckoo.CallMatcher
+	    private let sourceLocation: Cuckoo.SourceLocation
+	
+	    init(manager: Cuckoo.MockManager, callMatcher: Cuckoo.CallMatcher, sourceLocation: Cuckoo.SourceLocation) {
+	        self.cuckoo_manager = manager
+	        self.callMatcher = callMatcher
+	        self.sourceLocation = sourceLocation
+	    }
+	
+	    
+	
+	    
+	    @discardableResult
+	    func salva<M1: Cuckoo.Matchable>(_ pagamento: M1) -> Cuckoo.__DoNotUse<Void> where M1.MatchedType == Pagamento {
+	        let matchers: [Cuckoo.ParameterMatcher<(Pagamento)>] = [wrap(matchable: pagamento) { $0 }]
+	        return cuckoo_manager.verify("salva(_: Pagamento)", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+	    }
+	    
+	}
+
+}
+
+ class RepositorioDePagamentoStub: RepositorioDePagamento {
+    
+
+    
+
+    
+     override func salva(_ pagamento: Pagamento)  {
         return DefaultValueRegistry.defaultValue(for: Void.self)
     }
     
