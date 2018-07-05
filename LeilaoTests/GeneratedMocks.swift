@@ -1,4 +1,4 @@
-// MARK: - Mocks generated from file: Leilao/Dao/LeilaoDao.swift at 2018-06-12 18:57:23 +0000
+// MARK: - Mocks generated from file: Leilao/Dao/LeilaoDao.swift at 2018-06-14 19:05:38 +0000
 
 //
 //  LeilaoDao.swift
@@ -196,7 +196,7 @@ class MockLeilaoDao: LeilaoDao, Cuckoo.ClassMock {
 }
 
 
-// MARK: - Mocks generated from file: Leilao/Models/Carteiro.swift at 2018-06-12 18:57:23 +0000
+// MARK: - Mocks generated from file: Leilao/Models/Carteiro.swift at 2018-06-14 19:05:38 +0000
 
 //
 //  Carteiro.swift
@@ -287,7 +287,7 @@ class MockCarteiro: Carteiro, Cuckoo.ClassMock {
 }
 
 
-// MARK: - Mocks generated from file: Leilao/Models/RepositorioDePagamento.swift at 2018-06-12 18:57:23 +0000
+// MARK: - Mocks generated from file: Leilao/Models/RepositorioDePagamento.swift at 2018-06-14 19:05:38 +0000
 
 //
 //  RepositorioDePagamento.swift
