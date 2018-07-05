@@ -1,4 +1,4 @@
-// MARK: - Mocks generated from file: Leilao/Dao/LeilaoDao.swift at 2018-06-06 14:38:41 +0000
+// MARK: - Mocks generated from file: Leilao/Dao/LeilaoDao.swift at 2018-06-08 15:32:33 +0000
 
 //
 //  LeilaoDao.swift
@@ -23,7 +23,7 @@ class MockLeilaoDao: LeilaoDao, Cuckoo.ClassMock {
     
 
     
-    // ["name": "executaQuery", "returnSignature": "", "fullyQualifiedName": "executaQuery(_: String)", "parameterSignature": "_ sql: String", "parameterSignatureWithoutNames": "sql: String", "inputTypes": "String", "isThrowing": false, "isInit": false, "isOverriding": true, "hasClosureParams": false, "@type": "ClassMethod", "accessibility": "", "parameterNames": "sql", "call": "sql", "parameters": [CuckooGeneratorFramework.MethodParameter(label: nil, name: "sql", type: "String", range: CountableRange(1186..<1198), nameRange: CountableRange(0..<0))], "returnType": "Void", "isOptional": false, "stubFunction": "Cuckoo.ClassStubNoReturnFunction"]
+    // ["name": "executaQuery", "returnSignature": "", "fullyQualifiedName": "executaQuery(_: String)", "parameterSignature": "_ sql: String", "parameterSignatureWithoutNames": "sql: String", "inputTypes": "String", "isThrowing": false, "isInit": false, "isOverriding": true, "hasClosureParams": false, "@type": "ClassMethod", "accessibility": "", "parameterNames": "sql", "call": "sql", "parameters": [CuckooGeneratorFramework.MethodParameter(label: nil, name: "sql", type: "String", range: CountableRange(1246..<1258), nameRange: CountableRange(0..<0))], "returnType": "Void", "isOptional": false, "stubFunction": "Cuckoo.ClassStubNoReturnFunction"]
      override func executaQuery(_ sql: String)  {
         
             return cuckoo_manager.call("executaQuery(_: String)",
@@ -35,7 +35,7 @@ class MockLeilaoDao: LeilaoDao, Cuckoo.ClassMock {
         
     }
     
-    // ["name": "salva", "returnSignature": "", "fullyQualifiedName": "salva(_: Leilao)", "parameterSignature": "_ leilao: Leilao", "parameterSignatureWithoutNames": "leilao: Leilao", "inputTypes": "Leilao", "isThrowing": false, "isInit": false, "isOverriding": true, "hasClosureParams": false, "@type": "ClassMethod", "accessibility": "", "parameterNames": "leilao", "call": "leilao", "parameters": [CuckooGeneratorFramework.MethodParameter(label: nil, name: "leilao", type: "Leilao", range: CountableRange(1279..<1294), nameRange: CountableRange(0..<0))], "returnType": "Void", "isOptional": false, "stubFunction": "Cuckoo.ClassStubNoReturnFunction"]
+    // ["name": "salva", "returnSignature": "", "fullyQualifiedName": "salva(_: Leilao)", "parameterSignature": "_ leilao: Leilao", "parameterSignatureWithoutNames": "leilao: Leilao", "inputTypes": "Leilao", "isThrowing": false, "isInit": false, "isOverriding": true, "hasClosureParams": false, "@type": "ClassMethod", "accessibility": "", "parameterNames": "leilao", "call": "leilao", "parameters": [CuckooGeneratorFramework.MethodParameter(label: nil, name: "leilao", type: "Leilao", range: CountableRange(1339..<1354), nameRange: CountableRange(0..<0))], "returnType": "Void", "isOptional": false, "stubFunction": "Cuckoo.ClassStubNoReturnFunction"]
      override func salva(_ leilao: Leilao)  {
         
             return cuckoo_manager.call("salva(_: Leilao)",
@@ -71,10 +71,10 @@ class MockLeilaoDao: LeilaoDao, Cuckoo.ClassMock {
         
     }
     
-    // ["name": "atualiza", "returnSignature": "", "fullyQualifiedName": "atualiza(leilao: Leilao)", "parameterSignature": "leilao: Leilao", "parameterSignatureWithoutNames": "leilao: Leilao", "inputTypes": "Leilao", "isThrowing": false, "isInit": false, "isOverriding": true, "hasClosureParams": false, "@type": "ClassMethod", "accessibility": "", "parameterNames": "leilao", "call": "leilao: leilao", "parameters": [CuckooGeneratorFramework.MethodParameter(label: Optional("leilao"), name: "leilao", type: "Leilao", range: CountableRange(3673..<3686), nameRange: CountableRange(3673..<3679))], "returnType": "Void", "isOptional": false, "stubFunction": "Cuckoo.ClassStubNoReturnFunction"]
-     override func atualiza(leilao: Leilao)  {
+    // ["name": "atualiza", "returnSignature": " throws", "fullyQualifiedName": "atualiza(leilao: Leilao) throws", "parameterSignature": "leilao: Leilao", "parameterSignatureWithoutNames": "leilao: Leilao", "inputTypes": "Leilao", "isThrowing": true, "isInit": false, "isOverriding": true, "hasClosureParams": false, "@type": "ClassMethod", "accessibility": "", "parameterNames": "leilao", "call": "leilao: leilao", "parameters": [CuckooGeneratorFramework.MethodParameter(label: Optional("leilao"), name: "leilao", type: "Leilao", range: CountableRange(3733..<3746), nameRange: CountableRange(3733..<3739))], "returnType": "Void", "isOptional": false, "stubFunction": "Cuckoo.ClassStubNoReturnThrowingFunction"]
+     override func atualiza(leilao: Leilao)  throws {
         
-            return cuckoo_manager.call("atualiza(leilao: Leilao)",
+            return try cuckoo_manager.callThrows("atualiza(leilao: Leilao) throws",
                 parameters: (leilao),
                 superclassCall:
                     
@@ -112,9 +112,9 @@ class MockLeilaoDao: LeilaoDao, Cuckoo.ClassMock {
 	        return .init(stub: cuckoo_manager.createStub(for: MockLeilaoDao.self, method: "encerrados() -> [Leilao]", parameterMatchers: matchers))
 	    }
 	    
-	    func atualiza<M1: Cuckoo.Matchable>(leilao: M1) -> Cuckoo.ClassStubNoReturnFunction<(Leilao)> where M1.MatchedType == Leilao {
+	    func atualiza<M1: Cuckoo.Matchable>(leilao: M1) -> Cuckoo.ClassStubNoReturnThrowingFunction<(Leilao)> where M1.MatchedType == Leilao {
 	        let matchers: [Cuckoo.ParameterMatcher<(Leilao)>] = [wrap(matchable: leilao) { $0 }]
-	        return .init(stub: cuckoo_manager.createStub(for: MockLeilaoDao.self, method: "atualiza(leilao: Leilao)", parameterMatchers: matchers))
+	        return .init(stub: cuckoo_manager.createStub(for: MockLeilaoDao.self, method: "atualiza(leilao: Leilao) throws", parameterMatchers: matchers))
 	    }
 	    
 	}
@@ -160,7 +160,7 @@ class MockLeilaoDao: LeilaoDao, Cuckoo.ClassMock {
 	    @discardableResult
 	    func atualiza<M1: Cuckoo.Matchable>(leilao: M1) -> Cuckoo.__DoNotUse<Void> where M1.MatchedType == Leilao {
 	        let matchers: [Cuckoo.ParameterMatcher<(Leilao)>] = [wrap(matchable: leilao) { $0 }]
-	        return cuckoo_manager.verify("atualiza(leilao: Leilao)", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+	        return cuckoo_manager.verify("atualiza(leilao: Leilao) throws", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
 	    }
 	    
 	}
@@ -189,7 +189,98 @@ class MockLeilaoDao: LeilaoDao, Cuckoo.ClassMock {
         return DefaultValueRegistry.defaultValue(for: [Leilao].self)
     }
     
-     override func atualiza(leilao: Leilao)  {
+     override func atualiza(leilao: Leilao)  throws {
+        return DefaultValueRegistry.defaultValue(for: Void.self)
+    }
+    
+}
+
+
+// MARK: - Mocks generated from file: Leilao/Models/Carteiro.swift at 2018-06-08 15:32:33 +0000
+
+//
+//  Carteiro.swift
+//  Leilao
+//
+//  Created by Alura Laranja on 06/06/18.
+//  Copyright © 2018 Alura. All rights reserved.
+//
+
+import Cuckoo
+@testable import Leilao
+
+import Foundation
+
+class MockCarteiro: Carteiro, Cuckoo.ClassMock {
+    typealias MocksType = Carteiro
+    typealias Stubbing = __StubbingProxy_Carteiro
+    typealias Verification = __VerificationProxy_Carteiro
+    let cuckoo_manager = Cuckoo.MockManager(hasParent: true)
+
+    
+
+    
+
+    
+    // ["name": "envia", "returnSignature": "", "fullyQualifiedName": "envia(_: Leilao)", "parameterSignature": "_ leilao: Leilao", "parameterSignatureWithoutNames": "leilao: Leilao", "inputTypes": "Leilao", "isThrowing": false, "isInit": false, "isOverriding": true, "hasClosureParams": false, "@type": "ClassMethod", "accessibility": "", "parameterNames": "leilao", "call": "leilao", "parameters": [CuckooGeneratorFramework.MethodParameter(label: nil, name: "leilao", type: "Leilao", range: CountableRange(183..<198), nameRange: CountableRange(0..<0))], "returnType": "Void", "isOptional": false, "stubFunction": "Cuckoo.ClassStubNoReturnFunction"]
+     override func envia(_ leilao: Leilao)  {
+        
+            return cuckoo_manager.call("envia(_: Leilao)",
+                parameters: (leilao),
+                superclassCall:
+                    
+                    super.envia(leilao)
+                    )
+        
+    }
+    
+
+	struct __StubbingProxy_Carteiro: Cuckoo.StubbingProxy {
+	    private let cuckoo_manager: Cuckoo.MockManager
+	
+	    init(manager: Cuckoo.MockManager) {
+	        self.cuckoo_manager = manager
+	    }
+	    
+	    
+	    func envia<M1: Cuckoo.Matchable>(_ leilao: M1) -> Cuckoo.ClassStubNoReturnFunction<(Leilao)> where M1.MatchedType == Leilao {
+	        let matchers: [Cuckoo.ParameterMatcher<(Leilao)>] = [wrap(matchable: leilao) { $0 }]
+	        return .init(stub: cuckoo_manager.createStub(for: MockCarteiro.self, method: "envia(_: Leilao)", parameterMatchers: matchers))
+	    }
+	    
+	}
+
+	struct __VerificationProxy_Carteiro: Cuckoo.VerificationProxy {
+	    private let cuckoo_manager: Cuckoo.MockManager
+	    private let callMatcher: Cuckoo.CallMatcher
+	    private let sourceLocation: Cuckoo.SourceLocation
+	
+	    init(manager: Cuckoo.MockManager, callMatcher: Cuckoo.CallMatcher, sourceLocation: Cuckoo.SourceLocation) {
+	        self.cuckoo_manager = manager
+	        self.callMatcher = callMatcher
+	        self.sourceLocation = sourceLocation
+	    }
+	
+	    
+	
+	    
+	    @discardableResult
+	    func envia<M1: Cuckoo.Matchable>(_ leilao: M1) -> Cuckoo.__DoNotUse<Void> where M1.MatchedType == Leilao {
+	        let matchers: [Cuckoo.ParameterMatcher<(Leilao)>] = [wrap(matchable: leilao) { $0 }]
+	        return cuckoo_manager.verify("envia(_: Leilao)", callMatcher: callMatcher, parameterMatchers: matchers, sourceLocation: sourceLocation)
+	    }
+	    
+	}
+
+}
+
+ class CarteiroStub: Carteiro {
+    
+
+    
+
+    
+     override func envia(_ leilao: Leilao)  {
         return DefaultValueRegistry.defaultValue(for: Void.self)
     }
     
