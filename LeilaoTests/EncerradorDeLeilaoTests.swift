@@ -8,11 +8,16 @@
 
 import XCTest
 @testable import Leilao
+import Cuckoo
 
 class EncerradorDeLeilaoTests: XCTestCase {
     
+    var formatador:DateFormatter!
+    
     override func setUp() {
         super.setUp()
+        formatador = DateFormatter()
+        formatador.dateFormat = "yyyy/MM/dd"
     }
     
     override func tearDown() {
@@ -20,30 +25,51 @@ class EncerradorDeLeilaoTests: XCTestCase {
     }
     
     func testDeveEncerrarLeiloesQueComecaramUmaSemanaAntes() {
-        let formatador = DateFormatter()
-        formatador.dateFormat = "yyyy/MM/dd"
+
         guard let dataAntiga = formatador.date(from: "2018/05/09") else { return }
         
         let tvLed = CriadorDeLeilao().para(descricao: "TV Led").naData(data: dataAntiga).constroi()
         let geladeira = CriadorDeLeilao().para(descricao: "Geladeira").naData(data: dataAntiga).constroi()
         
-        let dao = LeilaoDaoFalso()
-        dao.salva(tvLed)
-        dao.salva(geladeira)
+        let leiloesAntigos = [tvLed, geladeira]
         
-        let encerradorDeLeilao = EncerradorDeLeilao(dao)
+        let daoFalso = MockLeilaoDao().withEnabledSuperclassSpy()
+        stub(daoFalso) { (daoFalso) in
+            when(daoFalso.correntes()).thenReturn(leiloesAntigos)
+        }
+        
+        let encerradorDeLeilao = EncerradorDeLeilao(daoFalso)
         encerradorDeLeilao.encerra()
         
-        let leiloesEncerrados = dao.encerrados()
+        guard let statusTvLed = tvLed.isEncerrado() else { return }
+        guard let statusGeladeira = geladeira.isEncerrado() else { return }
         
-        
-        XCTAssertEqual(2, leiloesEncerrados.count)
-        XCTAssertTrue(leiloesEncerrados[0].isEncerrado()!)
-        XCTAssertTrue(leiloesEncerrados[1].isEncerrado()!)
+        XCTAssertEqual(2, encerradorDeLeilao.getTotalEncerrados())
+        XCTAssertTrue(statusTvLed)
+        XCTAssertTrue(statusGeladeira)
     }
     
+    func testDeveAtualizarLeiloesEncerrados() {
+        guard let dataAntiga = formatador.date(from: "2018/05/19") else { return }
+        let tvLed = CriadorDeLeilao().para(descricao: "TV Led").naData(data: dataAntiga).constroi()
+        
+        let daoFalso = MockLeilaoDao().withEnabledSuperclassSpy()
+        
+        stub(daoFalso) { (daoFalso) in
+            when(daoFalso.correntes()).thenReturn([tvLed])
+        }
+        
+        let encerradorDeLeilao = EncerradorDeLeilao(daoFalso)
+        encerradorDeLeilao.encerra()
+        
+        verify(daoFalso).atualiza(leilao: tvLed)
+    }
+}
 
-    
+extension Leilao: Matchable {
+    public var matcher:ParameterMatcher<Leilao> {
+        return equal(to: self)
+    }
 }
 
 
